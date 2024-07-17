@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <!----------------form_basic---------------->
+    <form>
+        <p>Checked</p>
+        <input type="text" name="text" value="text"><br>
+        <input type="password" name="password" value="password"><br>
+        <input type="file" name="file" value="file"><br>
+        <input type="checkbox" name="checkbox" value="checkbox"><br>
+        <input type="radio" name="radio" value="radio"><br>
+
+        <input type="hidden" name="hidden" value="hidden"><br>
+
+        <input type="button" value="button"><br>
+        <input type="reset" value="reset"><br>
+        <input type="submit" value="submit"><br>
+        <input type="image" src="http://via.placeholder.com/100x100"><br>
+    </form>
+    <!----------------//form_basic---------------->
+    <br><br><br>
+    <!----------------form_group---------------->
+    <form>
+        <fieldset>
+            <legend>입력 양식</legend>
+            <table>
+                <tr>
+                    <td><label for="name">이름</label></td>
+                    <td><input id="name" type="text"></td>
+                </tr>
+                <tr>
+                    <td><label for="mail">이메일</label></td>
+                    <td><input id="mail" type="email"></td>
+                </tr>
+            </table>
+            <input type="submit">
+        </fieldset>
+    </form>
+    <!----------------//form_group---------------->
+    <br><br><br>
+    <!----------------form_radio---------------->
+    <form>
+        <table>
+            <tr>
+                <td><label for="username">이름</label></td>
+                <td><input id="username" type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>
+                    <input id="man" type="radio" name="gender" value="m">
+                    <label for="man">남자</label>
+                    <input id="woman" type="radio" name="gender" value="w">
+                    <label for="woman">여자</label>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="가입">
+    </form>
+    <!----------------//form_radio---------------->
+    <br><br><br>
+    <!----------------form_selectBasic---------------->
+    <select>
+        <option>김밥</option>
+        <option>떡볶이</option>
+        <option>순대</option>
+        <option>어묵</option>
+    </select>
+    <!----------------//form_selectBasic----------------->
+    <br><br><br>
+    <!----------------form_selectGroup---------------->
+    <select>
+        <optgroup label="HTML5">
+            <option>Multimedia Tag</option>
+            <option>Connectivity</option>
+            <option>Device Access</option>
+        </optgroup>
+        <optgroup label="CSS3">
+            <option>Animation</option>
+            <option>3D Transform</option>
+        </optgroup>
+    </select>
+    <!----------------//form_selectGroup---------------->
+    <br><br><br>
+    <!----------------form_selectMulti---------------->
+    <select multiple="multiple">
+        <option>김밥</option>
+        <option>떡볶이</option>
+        <option>순대</option>
+        <option>어묵</option>
+    </select>
+    <!----------------//form_selectMulti---------------->
+    <br><br><br>
+    <!----------------note_formlabel---------------->
+    <form>
+        <label for="name">이름</label>
+        <input id="name" type="text">
+      </form>
+    <!----------------//note_formlabel---------------->
+    <br><br><br>
+    <!----------------note_otherDisplayTag---------------->
+    <h1>h1 태그</h1>
+    <p>p 태그</p>
+    <hr>
+    <a href="#">a 태그</a>
+    <i>i 태그</i>
+    <!----------------//note_otherDisplayTag---------------->
+    <br><br><br>
+    <!----------------note_otherDisplayTag---------------->
+    <h4>잘못된 형태</h4>
+    <textarea>
+        Textarea 태그
+        Textarea 태그
+    </textarea>
+    <h4>올바른 형태</h4>
+    <textarea>Textarea 태그
+Textarea 태그</textarea>
+    <!----------------//note_otherDisplayTag---------------->
+
+</body>
+
+</html>
