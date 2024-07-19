@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+    <script>
+        // alert("hello JavaScript..!")
+
+        // let radius = 10;
+        // let pi = 3.14159265;
+
+        // alert(2 * radius * pi);
+
+
+
+
+        // Date 객체를 선언합니다. 
+        let date = new Date(); 
+        // 요소를 추출합니다. 
+        let year = date.getFullYear(); 
+        let month = date.getMonth() + 1; 
+        let day = date.getDay(); 
+        let hours = date.getHours(); 
+        let minutes = date.getMinutes(); 
+        let seconds = date.getSeconds();
+
+        console.log(year + "년" + month + "월" + day + "일 입니다.");
+        console.log(hours + "시" + minutes + "분" + seconds + "초 입니다.");
+
+
+
+
+
+
+
+
+
+        //////////////배열 출력//////////////////
+        // let array = [273, '문자열', true, function () { }, {}, [32, 103]];
+        // alert(array); 
+
+        //이름을 하나씩 출력해서 불러올수있다.
+
+        // // 변수를 선언합니다.
+        // let array = ['가', '나', '다', '라'];
+
+        // // 배열 요소를 변경합니다.
+        // array[0] = '윤';
+
+        // // 요소를 출력합니다.
+        // alert(array[0]);
+        // alert(array[1]);
+        // alert(array[2]);
+        // alert(array[3]);
+
+
+
+
+        // //loop_while
+        // // 변수를 선언합니다.
+        // let i = 0;
+        // let array = ['가', '나', '다'];
+
+        // // 반복을 수행합니다. i가 배열 원소 개수인 3보다 작을 때 반복합니다.
+        // while (i < array.length) {
+        //     // 출력합니다.
+        //     alert(i + '번째 출력: ' + array[i]);
+
+        //     // 탈출하려고 변수를 더합니다.
+        //     i++;
+        // }
+
+
+        // let array = ['가', '나', '다'];
+
+        // for (let i = 0; i < 3; i++) {
+        //     alert(i + '번째 출력: ' + array[i]);
+        // }
+
+
+        // // 변수를 선언합니다.
+        // let start = new Date().getTime();
+        // let count = 0;
+
+        // // 반복을 수행합니다.
+        // while (start + 1000 > new Date().getTime()) {
+        //     count++;
+        // }
+
+        // // 출력합니다.
+        // alert(count + '만큼 반복했습니다.');
+
+
+        //////////////////////////////
+        // // 변수를 선언합니다.
+        // let output = 0;
+
+        // // 반복을 수행합니다.
+        // for (let i = 0; i <= 100; i++) {
+        //     output += i;
+        // }
+
+        // // 출력합니다.
+        // alert(output);
+
+
+        // // 함수를 선언합니다.
+        // var 함수 = function () {
+        //     alert('함수_A');
+        // };
+        // var 함수 = function () {
+        //     alert('함수_B');
+        // };
+
+        // // 함수를 호출합니다.
+        // 함수();
+
+
+
+        // // 함수를 선언합니다.
+        // let 함수 = function () {
+        //     alert('함수_A');
+        // };
+
+        // function 함수() {
+        //     alert('함수_B');
+        // };
+
+        // // 함수를 호출합니다.
+        // // 함수();
+
+
+        // // 함수를 선언합니다.
+        // function f(x) {
+        //     return x * x;
+        // }
+
+        // // 함수를 호출합니다.
+        // alert(f(3));
+
+
+
+        // //****function_callback****//
+        // // 함수를 선언합니다.
+        // function callTenTimes(callback) {
+        //     // 10회 반복합니다.
+        //     for (let i = 0; i < 10; i++) {
+        //         callback(); // 매개변수로 전달된 함수를 호출합니다.
+        //     }
+        // }
+
+        // // 변수를 선언합니다.
+        // let fun = function () {
+        //     alert('함수 호출');
+        // };
+
+        // // 함수를 호출합니다.
+        // callTenTimes(fun); 
+
+
+        // //****function_nonameCallback****//
+        // // 함수를 선언합니다.
+        // function callTenTimes(callback) {
+        //     for (let i = 0; i < 10; i++) {
+        //         callback();
+        //     }
+        // }
+
+        // // 함수를 호출합니다.
+        // callTenTimes(function() {
+        //     alert('함수 호출');
+        // });
+
+
+
+        // //****object_this****//
+        // // 객체를 선언합니다.
+        // let person = {
+        //     name: '한지영',
+        //     eat: function (food) {
+        //         alert(this.name + '이 ' + food + '을 먹습니다.');
+        //     }
+        // };
+
+        // // 메서드를 호출합니다.
+        // person.eat('삼겹살 5인분');
+
+
+
+        // //******select_query******//
+        //     // 이벤트를 연결합니다.
+        //      window.onload = function () {
+        //     // 문서 객체를 선택합니다.
+        //     let header = document.getElementById('header');
+
+        //     // 문서 객체를 조작합니다.
+        //     header.style.color = '#CA848A';
+        //     header.style.background = '#FFBE98';
+        //     header.innerHTML = 'From JavaScript';
+        // };
+
+
+        //      // 이벤트를 연결합니다.
+        // window.onload = function () {
+        //     // 문서 객체를 선택합니다.
+        //     let headers = document.querySelectorAll('h1');
+
+        //     for (let i = 0; i < headers.length; i++) {
+        //         // 변수를 선언합니다.
+        //         let header = headers[i];
+        //         // 문서 객체를 조작합니다.
+        //         header.style.color = 'orange';
+        //         header.style.background = 'red';
+        //         header.innerHTML = 'From JavaScript';
+        //     }
+        // };
+
+
+        // // 이벤트를 연결합니다.
+        // window.onload = function () {
+        //     // 변수를 선언합니다.
+        //     let output = '';
+        //     for (let i = 0; i < 10; i++) {
+        //         output += '<h1>Header - ' + i + '</h1>';
+        //     }
+
+        //     // 문서 객체 내부의 글자를 변경합니다.
+        //     document.body.textContent = output;
+        //     // innerHTML 속성을 사용합니다.
+        //     // document.body.innerHTML = output;
+        // };
+
+        //     // innerHTML 속성을 사용했을경우
+        // window.onload = function () {
+
+        //     let output = '';
+        //     for (let i = 0; i < 10; i++) {
+        //         output += '<h1>Header - ' + i + '</h1>';
+        //     }
+
+        //     document.body.innerHTML = output;
+        // };
+
+
+
+        // //****control style****//
+        // // 이벤트를 연결합니다.
+        // window.onload = function () {
+        //     // 문서 객체를 추가합니다.
+        //     let output = '';
+        //     for (let i = 0; i < 256; i++) {
+        //         output += '<div></div>';
+        //     }
+        //     document.body.innerHTML = output;
+
+        //     // 문서 객체를 선택합니다.
+        //     let divs = document.querySelectorAll('div');
+        //     for (let i = 0; i < divs.length; i++) {
+        //         // 변수를 선언합니다.
+        //         let div = divs[i];
+
+        //         // 스타일을 적용합니다.
+        //         div.style.height = '2px';
+        //         div.style.background = 'rgb(' + i + ',' + i + ',' + 0 + ')';
+        //     }
+
+        // };
+
+
+        // //****control_attribute****//
+        // // 이벤트를 연결합니다.
+        // window.onload = function () {
+        //     // 변수를 선언합니다.
+        //     let image = document.getElementById('image');
+            
+        //     // 속성을 변경합니다.
+        //     image.src = 'http://via.placeholder.com/300x200';
+        //     image.width = 300;
+        //     image.height = 200;
+        // };
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+
+    <!-- <h1>Process - 1</h1>
+    <h2>Process - 2</h2>
+    <script>
+        // h1 태그의 배경 색상을 변경합니다.
+        document.querySelector('h1').style.backgroundColor = 'red';
+        // h2 태그의 글자 색상을 변경합니다.
+        document.querySelector('h2').style.color = 'red';        
+    </script> -->
+
+    <!-- <h1 id="header">Header</h1> -->
+
+    <!-- <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1> -->
+
+
+    <!-- control_attribute
+    <img id="image"> -->
+
+
+
+
+
+</body>
+
+</html>

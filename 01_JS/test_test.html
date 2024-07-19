@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Date</title>
+    <script>
+        window.onload = function() {
+            // Date 객체를 선언합니다. 
+            let date = new Date(); 
+
+            // 요소를 추출합니다. 
+            let year = date.getFullYear(); 
+            let month = date.getMonth() + 1; 
+            let day = date.getDate(); // 날짜를 추출합니다.
+            let hours = date.getHours(); 
+            let minutes = date.getMinutes(); 
+            let seconds = date.getSeconds();
+
+            // 콘솔에 출력합니다.
+            console.log(year + "년 " + month + "월 " + day + "일 입니다.");
+            console.log(hours + "시 " + minutes + "분 " + seconds + "초 입니다.");
+
+            // // 추가적으로 HTML에도 표시합니다.
+            // document.body.innerHTML = `
+            //     <p>${year}년 ${month}월 ${day}일 입니다.</p>
+            //     <p>${hours}시 ${minutes}분 ${seconds}초 입니다.</p>
+            // `;
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
