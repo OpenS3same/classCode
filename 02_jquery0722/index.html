@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <!-- <script src="jquery.lightbox.js"></script> -->
+    <!-- <script src="https://masonry.desandro.com/masonry.pkgd.min.js"></script> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* 원하는 기본 폰트로 설정 */
+        }
+
+        /* ********class 조작************ */
+        /* #box {
+            width: 100px; height: 100px;
+            background-color: red;
+        }
+
+        #box.hover{
+            background-color: blue;
+            border-radius: 50px;
+        } */
+
+        /* //복합 이벤트 연결 메서드 */
+        /* h1{background-color: antiquewhite; width: 250px;} */
+
+
+        /* ****카드타일_Masonry플러그인 사용**** */
+        /* *{margin: 0; padding: 0;}
+        .box{
+            background: black;
+            margin: 5px;
+        } */
+
+        /* ****슬라이더 갤리러**** */
+        div.item:nth-child(1) {
+            background: blueviolet;
+        }
+
+        div.item:nth-child(2) {
+            background: pink;
+        }
+
+        div.item:nth-child(3) {
+            background: burlywood;
+        }
+    </style>
+    <script>
+        // //이벤트를 연결합니다
+        // $(document).ready(function (){
+        //     //스타일 속성을 변경합니다.
+        //     $('h1').css('color')
+        // })
+
+
+
+        // //이벤트 연결
+        // $(document).ready(function(){
+        //     //속성을 추출합니다.
+        //     let src = $('script').attr('src');
+
+        //     //출력합니다.
+        //     alert(src);
+        // });
+
+
+        // //이벤트를 연결합니다/
+        // $(document).ready(function () {
+        //     //속성을 지정합니다.
+        //     $('img').attr('alt', 'jQuery 라이브러리를 사용한 속성 지정 ');
+        //     $('img').attr('src', 'http://via.placeholder.com/100x100');
+        //     $('img').attr('width', '100');
+        // });
+
+
+
+        // //이벤트를 연결합니다.
+        // $(document).ready(function () {
+        //     //속성을 지정합니다.
+        //     $('img').attr({
+        //         alt: 'jQuery 라이브러리를 사용한 속성 지정',
+        //         src: function (index) {
+        //             //변수를 선언합니다.
+        //             let size = (index + 1) * 100;
+
+        //             //반환합니다.
+        //             return 'http://via.placeholder.com/' + size +'x100';
+        //         }
+        //     });
+        // });
+
+
+        // //위와 동일한 값
+        // $(document).ready(function (){
+        //     //속성을 지정합니다.
+        //     $('img').attr('alt' , 'jQuery 라이브러리를 사용한 속성 지정')
+        // })
+
+
+        // $(document).ready(function (){
+        //     //스타일을 적용합니다.
+        //     $('.box').css('float', 'left');
+        //     $('.box').css('margin', 10);
+        //     $('.box').css('width', 100);
+        //     $('.box').css('height', 100);
+        //     $('.box').css('backgroundColor', 'red');
+        // });
+
+        // $(document).ready(function (){
+        //     //스타일을 적용합니다.
+        //     $('.box').css('float', 'top');
+        //     $('.box').css('margin', 15);
+        //     $('.box').css('width', 150);
+        //     $('.box').css('height', 150);
+        //     $('.box').css('backgroundColor', '#0769AD');
+        // });
+
+
+        //위와 동일한 값이 나옴
+        // $(document).ready(function (){
+        //     $('.box').css({
+        //         float:'left'
+        //         margin: 100,
+        //         width: 100;
+        //         height: 
+        //     })
+        // })
+
+
+
+        //////////////다시 해보기////////////
+        // $(document).ready(function () {
+        //     let output = '';
+        //     for(let i = 0; i < 256; i++) {
+        //         output += '<div></div>';
+        //     }
+        //     document.body.innerHTML = output;
+        //     //스타일 적용
+        //     $('div').css ({
+        //         height: 2,
+        //         backgroundColor: function (i) {
+        //             return 'rgb(' + i + ',' + i + ',' + i + ')';
+        //         }
+        //     });
+        // });
+
+
+        // //text() 메서드로 내부 글자 조작하기
+        // $(document).ready(function () {
+        //     //내부 글자 변경
+        //     $('h1:nth-child(1)').text('<a href="#">text()</a>'); //그대로 보여주는 것
+        //     $('h1:nth-child(2)').html('<a href="#">html()</a>'); //링크값으로 보여주는 것
+        // });
+
+
+
+        // $(document).ready(function (){
+        //     //변수 선언
+        //     let text = $('h1').text();
+        //     let html = $('h1').html();
+        //     //출력합니다.
+        //     alert("text: " + text);
+        //     alert("html: " + html);
+        // });
+
+
+
+        // //********class 조작************//
+        // //hover 할 경우 빨간 네모에서 파란 원형으로 바뀜
+        // $(document).ready(function (){
+        //     $('#box').hover(function () {
+        //         //스타일을 변경합니다.
+        //         $('#box').addClass('hover');
+        //     }, function(){
+        //         //스타일을 변경합니다.
+        //         $('#box').removerClass('hover');
+        //     });
+        // });
+
+
+
+        // ******이벤트 연결*******//
+
+        // //이벤트 연결
+        // $(document).ready(function () {
+        //     //이벤트를 연결
+        //     $('h1').click(function () {
+        //         alert('클릭!');
+        //     });
+        // });
+
+        // 선택자가 메서드를 결정해서 이벤트를 가져 올수도 있음
+
+
+
+
+        // //복합 이벤트 연결 메서드
+        // //이벤트 연결
+        // $(document).ready(function () {
+        //     //이벤트 연결
+        //     $('h1').hover(function () {
+        //         //색상 변경
+        //         $(this).css({
+        //             background: 'red',
+        //             color: 'white',
+        //             width: '250px'
+
+        //         })
+        //     });
+        // });
+
+
+
+        // $(document).ready(function () {
+        //     //스타일 변경 및 이벤트 연결
+        //     $('#box').css({
+        //         width: 100,
+        //         height: 100,
+        //         background: 'orange'
+        //     }).on('click', function(){
+        //         $(this).css('background', 'red');
+        //     }).on('mouseenter', function() {
+        //         $(this).css('background', 'blue');
+        //     }).on('mouseleave', function() {
+        //         $(this).css('background', 'orange');
+        //     });
+        // });
+
+        // jQuery 메서드(.css) 실행 후 반환되는 객체는 jQuery 객체입니다.
+        // this = jQuery객체이다
+
+
+        // //값은 위와 동일, 위는 on을 반복해서 쓴것, 아래는 정의해서 쓴것
+        // $(document).ready(function (){
+        //     //스타일 변경 및 이벤트 연결
+        //     $('#box').css
+        // })
+
+
+
+        // ********기본 이벤트 제거********//
+
+        // //이벤트 연결
+        // $(document).ready(function (){
+        //     //이벤트 연결
+        //     $('a').click(function (event) {
+        //         //출력
+        //         alert('click');
+        //         //기본 이벤트 제거
+        //         event.preventDefault();
+        //     });
+        // });
+
+
+
+        // ********기본 이벤트 제거를 활용한 유효성 검사********//
+        //제한을 거는 것 (ex: 영어, 대문자, 소문자, 8글자)
+
+
+
+        // *****시각효과 메서드*****//
+
+        // //이벤트 연결
+        // $(document).ready(function(){
+        //     //이벤트 연결
+        //     $('button').click(function () {
+        //         //간단한 효과 적용
+        //         $('.page').fadeToggle('slow');
+        //     });
+        // });
+
+
+        ///////////////////////다시보기 => 시간 초수를 500에서 1000으로 늘리니까 효과가 나타났다
+        // *****애니메이션 효과*****//
+
+        // $(document).ready(function () {
+        //     //스타일 변경
+        //     $('#box').css({
+        //         width: 100,
+        //         height: 100,
+        //         background: 'red'
+        //     }).animate({
+        //         width: 300,
+        //         opacity: 0.5,
+        //     }, 1000);
+        // });
+
+
+        // *****메서드 체이닝을 사용한 애니메이션 실행*****
+
+        // $(document).ready(function () {
+        //     //스타일 변경
+        //     $('#box').css({
+        //         width: 100,
+        //         height: 100,
+        //         background: 'red',
+        //         position: 'absolute',
+        //         left: 10,
+        //         top:10
+        //     }).animate({
+        //         width: 300,
+        //         opacity: 0.5
+        //     }, 500).animate({
+        //         opacity: 1,
+        //         left: 100,
+        //         top: 200
+        //     }, 500);
+        // });
+
+
+        /////////////////다시해보기
+        // // *****애니메이션 효과 정지*****//
+
+        // $(document).ready(function (){
+        //     //변수 선언
+        //     let clearQueue = false;
+        //     let goToEnd = false;
+        //     //이벤트 연결
+        //     $('#clearQueue').change(function () {
+        //         clearQueue = $(this).prop('checked')
+        //     });
+
+        //     $('#goToEnd').change(function () {
+        //         goToEnd = $(this).prop('checked');
+        //     });
+
+        //     $('#stopButton').click(function () {
+        //         $('#box').stop(clearQueue, goToEnd);
+        //     });
+
+        //     //스타일 변경
+        //     $('#box').css({
+        //         width: 100,
+        //         height: 100,
+        //         background: 'red'
+        //     })
+        //     //타이머를 연결
+        //     setInterval(function () {
+        //         $('#box').animate({
+        //             width:200
+        //         }, 1000).delay(1000).animate({
+        //             width: 100,
+        //             height: 100
+        //         }, 1000);
+        //     }, 3000);
+        // });
+
+
+        // // *****입력 양식 포커스 자동 설정****//
+        //     // 오토포커스는 
+        // window.onload = function () {
+        //     //문서 객체를 선택
+        //     let input_1 = document.querySelectorAll('input')[0];
+        //     let input_2 = document.querySelectorAll('input')[1];
+
+        //     //input_1
+        //     input_1.onkeydown = function () {
+        //         //글자 개수가 6개 이상일때
+        //         if (6 <= input_1.value.length) {
+        //             //input_2 문서 객체로 포커스를 이동
+        //             input_2.focus();
+        //         }
+        //     };
+        //     // input_2
+        //     input_2.onkeydown = function (event) {
+        //         //이벤트 객체 추출
+        //         event = event || window.event;
+        //         //사용자의 입력이 '백 스페이스' 이고 입력된 글자가 없을 때
+        //         if (event.keyCode == 8 && input_2.value.length == 0) {
+        //             input_1.focus();
+        //         }
+        //     };
+        // };
+
+        //////////////완성하기
+        // //****프레임 애니메이션****// 
+
+        // window.onload = function () {
+        //     //변수를 선언
+        //     let
+        // }
+
+
+
+        // // ****문서 객체 생성하기****//
+        // //이벤트를 연결
+        // $(document).ready(function () {
+        //     //문서 객체를 생성
+        //     $('<h1>Create Document Object By jQuery</h1>')
+        // });
+
+
+
+        // // ****문서 객체 생성 - appendTo() 메서드를 사용해 문서 객체 추가하기****//
+        // $(document).ready(function () {
+        //     // 10회 반복
+        //     for (let i = 0; i < 10; i++) {
+        //         //문서 객체 생성
+        //         $('<h1>Create Document Object + ' + i + '</h1>').css({
+        //             backgroundColor: '#399918',
+        //             color: '#ECFFE6'
+        //         }).appendTo('body');
+        //     }
+        // });
+
+
+        // ****문서 객체 생성 - appendTo() 메서드를 사용해 문서 객체 추가하기2****//
+        // $(document).ready(function (){
+        //     //10회 반복
+        //     for(let i = 0; i < 10; i++) {
+        //         //문서 객체 생성
+        //         let $dynamic = $('<h1>Create Document Object + ' + i + '</h1>').css({
+        //             backgroundColor: '#399918',
+        //             color: '#ECFFE6'
+        //         });
+
+        //         //문서 객체 추가
+        //         $('body').append($dynamic);
+        //     }
+        // });
+
+
+        // // ****무한스크롤****//
+        //     //이벤트를 연결
+        //     $(document).ready(function () {
+        //         //문서 객체 추가 함수
+        //         let appendDocument = function () {
+        //             for (var i = 0; i < 20; i++) {
+        //                 //문서 객체를 생성
+        //                 $('<h1>Infinity Scroll</h1>').appendTo('body');
+        //             }
+        //         };
+        //         //초기에 문서 객체를 추가
+        //         appendDocument();
+        //         // 이벤트 연결
+        //         $(window).scroll(function () {
+        //             //변수 선언
+        //             let scrollHeight = $(window).scrollTop() + $(window).height();
+        //             let documentHeight = $(document).height();
+
+        //             //검사하기
+        //             if (scrollHeight == documentHeight) {
+        //                 appendDocument();
+        //             }
+        //         });
+        //     });
+
+
+
+        // // ****플러그인_라이트박스****//
+
+        // $(document).ready(function () {
+        //     $('a.light').lightBox();
+        // });
+
+
+        // // ****카드타일_Masonry플러그인 사용****//
+        // $(document).ready(function () {
+        //     //문서 객체 생성
+        //     for (let i = 0; i < 100; i++) {
+        //         $('<div></div>').addClass('box').css({
+        //             width: 100,
+        //             height: Math.floor(Math.random() * 100) + 50
+        //         }).appendTo('body');
+        //     }
+        //     //Masonry 플러그인을 적용
+        //     $('body').masonry({
+        //         columnWidth: 110
+        //     });
+        // });
+
+
+
+        //****슬라이더*****//
+        //첫번째 ready 이벤트
+        $(document).ready(function () {
+            //변수 선언
+            let width = $('[data-role="slider"]').attr('data-width');
+            let height = $('[data-role="slider"]').attr('data-height');
+            let count = $('[data-role="slider"] div.item').length;
+
+            //스타일 적용
+            $('[data-role="slider"]').css({
+                position: 'relative',
+                overflow: 'hidden',
+                width: width,
+                height: height
+            }).find('.container').css({
+                position:'absolute',
+                width: count * width,
+                overflow: 'hidden'
+            }).find('.item').css({
+                width: width,
+                height: height,
+                float: 'left'
+            });
+        });
+
+        //두번째 ready 이벤트
+        $(document).ready(function () {
+            //변수 선언
+            let currentPage = 0;
+            let changePage = function () {
+                $('[data-role="slider"] > .container').animate({
+                    left: -currentPage * width
+                }, 500);
+            };
+            
+            //이벤트 연결
+            $('#left-button').click(function () {
+                if (currentPage > 0) {
+                    //왼쪽으로 이동
+                    currentPage = currentPage - 1;
+                    changePage();
+                }
+            });
+
+            $('#right-button').click(function () {
+                if (currentPage < count - 1) {
+                    //오른쪽으로 이동
+                    currentPage = currentPage + 1;
+                    changePage();
+                }
+            });
+
+        });
+    </script>
+
+   
+
+</head>
+
+<body>
+    <!-- <img src="" alt=""> -->
+
+
+    <!-- <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div> -->
+
+
+    <!-- <h1>Header - 0</h1>
+    <h1>Header - 1</h1> -->
+
+    <!-- <div id="box"></div> -->
+
+    <!-- <h1>Click</h1> -->
+
+    <!-- //복합 이벤트 연결 메서드
+    <h1>마우스를 올려주세요</h1> -->
+
+
+    <!-- <div id="box"></div> -->
+
+    <!-- ********기본 이벤트 제거******** -->
+    <!-- <a href="http://www.naver.com">네이버</a> -->
+
+
+
+    <!-- *****시각효과 메서드***** -->
+    <!-- <button> Toggle Show</button>
+    <div class="page">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tempora optio minus provident voluptate magnam distinctio quibusdam.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div> -->
+
+    <!-- <div id="box"></div> -->
+
+
+    <!-- 입력 양식 포커스 자동 설정 -->
+    <!-- <input type="text" maxlength="6">
+    <span>-</span>
+    <input type="text" maxlength="7"> -->
+
+
+    <!-- ****프레임 애니메이션**** -->
+    <!-- <img id = "image"> -->
+
+
+
+    <!-- ****플러그인_라이트박스**** -->
+    <!-- <a class="light" href="img/1.png">LightBox</a>
+    <a class="light" href="img/2.png">LightBox</a>
+    <a class="light" href="img/3.png">LightBox</a> -->
+
+    <!-- ****슬라이더 갤러리**** -->
+    <div data-role="slider" data-width="500" data-height="300">
+        <div class="container">
+            <div class="item">
+                <h1>Lorem ipsum dolor sit amet consectetur elit.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="item">
+                <h1>Lorem ipsum dolor sit amet consectetur elit.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="item">
+                <h1>Lorem ipsum dolor sit amet consectetur elit.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <button id="left-button">👈🏻</button>
+        <button id="right-button">👉🏻</button>
+    </div>
+
+
+</body>
+
+</html>
