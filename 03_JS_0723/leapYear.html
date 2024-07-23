@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        
+        const rawInput = prompt('연도를 입력해 주세요.');
+        const year = Number(rawInput);
+
+        alert(`${ year }년은 ${ (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0) ? '윤년입니다.' : '윤년이 아닙니다.'}`); 
+        
+        // 윤년의 규칙 : 1. 4로 나누어 떨어지는 해
+        //               2. 4로 나누어떨어져도 100으로 나누어 떨어지면 평년
+        //               3. 400으로 나누어 떨어지면 윤년
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html> 

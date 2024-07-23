@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+     
+
+        // //***switch 조건문과 짧은 조건문****//
+        // //변수선언
+        // const input = Number(prompt('숫자를 입력하세요', '숫자' ));
+
+        // //조건문
+
+        // switch(input % 2) {
+        //     case 0:
+        //         alert('짝수입니다.');
+        //         break
+        //         case 1:
+        //             alert('홀수입니다.');
+        //             break
+        //             default:
+        //                 alert('숫자가 아닙니다.');
+        //                 break
+        // }
+
+
+
+
+        // // ****반복문*****//
+        // const todos = ['우유구매', '업무 메일 확인하기', '필라테스 수업']
+
+        //     for (const i in todos) {
+        //         console.log(`${i}번째 할 일: ${todos[i]}`)
+        //     }
+
+        //     //콘솔 창 확인
+
+
+
+
+            // 특정 횟수만큼 사용할 때 for of 문
+
+
+            // const todos = ['우유 구매', '업무 메일 확인하기', '필라테스 수업']
+            
+            // for (let i = 0; i<todos.length; i++){
+            //     console.log(`${i}번째 할 일: ${todos[i]}`)
+            // }
+
+
+            // // ****위 코드 반대로 출력***//
+            // const todos = ['우유 구매', '업무 메일 확인하기', '필라테스 수업']
+
+            // for (let i = todos.length - 1; i >= 0; i--){
+            //     console.log(`${i}번째 할 일: ${todos[i]}`)
+            // }
+
+
+            // let output = 0
+
+            // //반복문
+            // for(let i = 1; i<=10; i++){
+            //     //조건문
+            //     if (i % 2 === 1){
+            //         //홀수면 현재 반복을 중지, 다음 반복 수행
+            //         continue
+            //     }
+            //     output += i
+            // }
+
+            // //출력
+            // alert(output)
+
+
+
+            // // ****함수 예제****//
+            // function sumAll(a, b){
+            //     let output = 0
+            //     for (let i = a; i<=b; i++){
+            //         output += i
+            //     }
+            //     return output
+            // }
+
+            // console.log(`1부터 100까지의 합: ${sumAll(1,100)}`)
+            // console.log(`1부터 500까지의 합: ${sumAll(1,500)}`)
+
+
+
+// //****최솟갑 구하는 함수****//
+
+//                 function min(array){
+//                     let output = array[0]
+//                     for (const item of array){
+//                         //현재 output보다 더 작은 item이 있다면
+//                         if (output>item) {
+//                             //out의 값을 item으로 변경
+//                             output = item
+//                         }
+//                     };
+//                     return output
+//                 };
+
+//                 const testArray = [52, 273, 32, 103, 275, 24, 57]
+//                 console.log(`${testArray}중에서`)
+//                 console.log(`최솟값 = ${min(testArray)}`)
+
+        
+//****기본 매개변수****//
+
+// //급여정보  
+//                 function earnings (name, wage=8590, hours= 40){
+//                     console.log(`#{name} 님의 급여 정보`)
+//                     console.log(`-ㅅ급: ${wage}원`)
+//                     console.log(`-근무시간: ${hours}시간`)
+//                     console.log(`-급여: ${wage * hours}원`)
+//                     console.log("")
+                    
+//                 }
+
+//                 //최저임금으로 최대한 일하는 경우
+//                 earnings('구름')
+
+//                 //시급 1만원으로 최대한 일하는 경우
+//                 earnings('별', 10000)
+
+//                 //시급 1만원으로 52시간 일한 경우
+//                 earnings('인성', 10000, 52)
+
+
+
+// // ****콜백함수****//
+//                 const numbers = [273, 52, 103, 32, 57]
+
+//                 numbers.forEach(function (value, index, array){
+//                     console.log(`${index}번째 요소 : ${value}`)
+//                 });
+
+
+
+// ****콜백함수_map****//
+
+            // let numbers = [273, 52, 103, 32, 57]
+
+            // //배열의 모든값을 제곱
+            // numbers = numbers.map(function (value, index, array){
+            //     return value * value
+            // });
+
+            // //출력
+            // numbers.forEach(console.log)
+
+
+
+// // ****콜백함수_filter****//
+
+//                 const numbers = [0, 1, 2, 3, 4, 5]
+//                 const evenNumbers = numbers.filter(function (value){
+//                     return value % 2 === 0
+//                 });
+
+//                 console.log(`원래배열:${numbers}`)
+//                 console.log(`짝수만 추출: ${evenNumbers}`)
+
+                
+
+
+
+// // ****화살표 함수****//
+
+//                 let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+//                 numbers
+//                 .filter((value) => value % 2 === 0)
+//                 .map((value)=> value * value)
+//                 .forEach((value) => {
+//                     console.log(value)
+//                 });
+
+
+
+// // ****타이머 함수****//
+
+//                 setTimeout(() =>{
+//                     console.log('1초 후에 실행됩니다')
+//                 }, 1 * 1000)
+
+//                 let count = 0
+//                 setInterval(() =>{
+//                     console.log(`1초마다 실행됩니다 (${count}번째)`)
+//                     count++
+//                 }, 1 * 1000)
+
+
+
+
+
+// // ****타이머 함수_종료**** 시간제약으로 종료시키기//
+
+// //퀴즈풀때 다음 문제로 넘어가게 하거나 시간을 종료 시키는 등의 상황에서 쓸 수 있다
+
+//                 setTimeout(()=>{
+//                     console.log('1초 후에 실행됩니다')
+//                 }, 1 * 1000)
+
+//                 let count = 0
+//                 setInterval(()=> {
+//                     console.log(`1초마다 실행됩니다(${count}번째)`)
+//                     count++
+//                 }, 1*1000)
+
+
+
+
+// ****즉시 호출 함수 ****//
+
+                let pi = 3.14
+                console.log(`파이 값은 ${pi}입니다.`)
+
+                //블록을 사용한 스코프 생성
+                {
+                    let pi = 3.141592
+                    console.log(`파이 값은 ${pi}입니다.`)
+                }
+                console.log(`파이 값은 ${pi}입니다.`)
+
+
+                //함수 블록을 사용한 스코프 생성
+                function sample() {
+                    let pi = 3.141592
+                    console.log(`파이 값은 ${pi} 입니다.`)
+                }
+                sample()
+                console.log(`파이 값은 ${pi}입니다.`)
+                
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html> 
