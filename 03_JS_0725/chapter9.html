@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // //객체를 선언
+        // const student = []
+        // students.push({이름: '구름', 국어:87, 영어:98, 수학:77, 과학:90})
+        // students.push({이름: '별이', 국어:92, 영어:98, 수학:96, 과학:88})
+        // students.push({이름: '겨울', 국어:76, 영어:96, 수학:94, 과학:96})
+        // students.push({이름: '바다', 국어:98, 영어:52, 수학:98, 과학:92})
+
+        // //출력
+        // let output = '이름\t총점\t평균\n'
+        // for (const of students) {
+        //     const sum = s.국어 + s.영어 + s.수학 + s.과학
+        //     const average = sum / 4
+        //     output += `${s.이름}\t${sum}점\t${average}점\n`
+        // }
+
+        // console.log(output)
+
+
+// // ***객체를 처리하는 함수***//
+
+//                 //객체 선언
+//                 const student = []
+//                 student.push({이름: '구름', 국어:87, 영어:98, 수학:88, 과학:90})
+//                 student.push({이름: '별이', 국어:92, 영어:98, 수학:96, 과학:88})
+//                 student.push({이름: '겨울', 국어:76, 영어:96, 수학:94, 과학:86})
+//                 student.push({이름: '바다', 국어:98, 영어:52, 수학:98, 과학:92})
+
+//                 //객체를 처리하는 함수 선언
+//                 function getSumOf (student) {
+//                     return student.국어 + student.영어 + student.수학 + student.과학
+//                 }
+
+//                 function getAverageOf (student) {
+//                     return getSumOf(student) / 4
+
+//                     //출력
+//                     let output='이름\t총점\t평균\n'
+//                     for (const s of students) {
+//                         output += `${s.이름}\t${getSumOf(s)}점\t${getAverageOf(s)}\n`
+//                     }
+//                     console.log(output)
+//                 }
+
+
+
+// //객체를 처리하는 함수_2 this 로 처리
+//             //객체 선언
+//             const students = []
+//             students.push({이름:'구름', 국어:87, 영어:98, 수학:88, 과학:90})
+//             students.push({이름:'별이', 국어:92, 영어:98, 수학:96, 과학:88})
+//             students.push({이름:'겨울', 국어:76, 영어:96, 수학:94, 과학:86})
+//             students.push({이름:'바다', 국어:98, 영어:52, 수학:98, 과학:92})
+
+//             //students 배열 내부의 객체 모두에 메소드를 추가
+//             for (const student of students) {
+//                 student.getSum = function () {
+//                     return this.국어 + this.영어 + this.수학 + this.과학
+//                 }
+
+//                 student.getAverage = function () {
+//                     return this.getSum() / 4
+//                 }
+//             }
+
+//             //출력
+//             let output = '이름\t총점\t평균\n'
+//             for (const s of students) {
+//                 output += `${s.이름}\t${s.getSum()}점\t${s.getAverage()}점\n`
+//             }
+
+//             console.log(output)
+
+
+// //객체를 생성하는 함수
+
+//         function createStudent(이름, 국어, 영어, 수학, 과학) {
+//             return {
+//                 //속성 선언
+//                 이름: 이름,
+//                 국어: 국어,
+//                 영어: 영어,
+//                 수학: 수학,
+//                 과학: 과학,
+//                 //메소드 선언
+//                 getSum () {
+//                     return this.국어 + this.영어 + this.수학 + this.과학
+//                 },
+//                 getAverage () {
+//                     return this.getSum() / 4
+//                 },
+//                 toString () {
+//                     return `${this.이름}\t${this.getSum()}점\t${this.getAverage()}점\n`
+//                 }
+//             }
+//         }
+//             //객체를 선언
+
+//             const students = []
+//             students.push(createStudent('구름', 87, 98, 88, 90))
+//             students.push(createStudent('별이', 92, 98, 96, 88))
+//             students.push(createStudent('겨울', 76, 96, 94, 86))
+//             students.push(createStudent('바다', 98, 52, 98, 92))
+
+//             //출력
+//             let output = '이름\t총점\t평균\n'
+//             for (const s of students) {
+//                 output += s.toString()
+//             }
+//             console.log(output)
+        
+
+
+
+// ***Rectangle 클래스***//
+
+            class Rectangle {
+                constructor (width, height) {
+                    this.width = width
+                    this.height = height
+                }
+
+                //사각형의 둘레를 구하는 메소드
+                getPerimeter () {
+                    return 2 * (this.width + this.height)
+                }
+
+                //사각형의 넓이를 구하는 메소드
+                getArea () {
+                    return this.width * this.height
+                }
+            }
+
+                const rectangle = new Rectangle(10, 20)
+                console.log(`사각형의 둘레: ${rectangle.getPerimeter()}`)
+                console.log(`사각형의 넓이: ${rectangle.getArea()}`)
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // // *** 남은 글자 수 출력하기***
+        // ///////다시 해보기 / 글자수가 안나옴
+        //         document.addEventListener('DOMContentLoaded', () => {
+        //             const textarea = document.querySelector('textarea')
+        //             const h1 = document.querySelector('h1')
+
+        //             textarea.addEventListener('keyup', (event) => {
+        //                 const length = textarea.value.length
+        //                 h1.textContent = '글자 수: ${length}'
+        //             })
+        //         })
+
+
+
+        // //****키보드 이벤트와 관련된 이벤트 속성****//
+        //검색한거 다시 확인 
+
+        //         document.addEventListener('DOMContentLoaded', () => {
+        //             const h1 = document.querySelector('h1')
+        //             const print = (event) => {
+        //                 let output = ""
+        //                 output += `alt: ${event.altKey}<br> `
+        //                 output += `ctrl: ${event.ctrlKey}<br> `
+        //                 output += `shift: ${event.shiftKey}<br> `
+        //                 output += `code: ${typeof(event.code) !== 'undefined'?
+        //                 event.code : event.keyCode}<br> `
+        //                 h1.innerHTML = output
+        //             }
+
+        //             document.addEventListener('keydown', print)
+        //             document.addEventListener('keyup', print)
+        //         })
+
+
+
+        // //***키로 별 움직이기***//
+        //         document.addEventListener('DOMContentLoaded', () => {
+        //             //별의 초기 설정
+        //             const star = document.querySelector('h1')
+        //             star.style.position = 'absolute'
+
+        //             // 별의 이동을 출력하는 기능
+        //             let [x, y] = [0, 0]
+        //             const block = 20
+        //             const print = () => {
+        //                 star.style.left = `${x * block}px`
+        //                 star.style.top = `${y * block}px`
+        //             }
+        //             print()
+
+        //             //별을 이동하는 기능
+
+        //             const [left, up, right, down] = [37, 38, 39, 40]
+        //             document.body.addEventListener('keydown', (event) => {
+        //                 switch (event.keyCode) {
+        //                     case left:
+        //                         x -= 1
+        //                         break
+        //                         case up:
+        //                             y -= 1
+        //                             break
+        //                             case right:
+        //                                 x += 1
+        //                                 case down:
+        //                                     y += 1
+        //                                     break
+        //                 }
+        //                 print()
+        //             })
+        //         })
+
+
+
+
+        // // 입력 양식을 기반으로 inch를 cm 단위로 변환하는 프로그램
+        //숫자와 글자 입력 두개다 나오게는 ???? 
+        //         document.addEventListener('DOMContentLoaded', () => {
+        //             const input = document.querySelector('input')
+        //             const button = document.querySelector('button')
+        //             const p = document.querySelector('p')
+
+        //             button.addEventListener('click', () => {
+        //                 //입력을 숫자로 변환
+        //                 const inch = Number(input.value)
+        //                 //숫자가 아니라면 바로 리턴
+        //                 if(isNaN(inch)) {
+        //                     p.textContent = '숫자를 입력해주세요'
+        //                     return
+        //                 }
+        //                 //변환해서 출력
+        //                 const cm = inch * 2.54
+        //                 p.textContent = `${cm}cm`
+        //             })
+        //         })
+
+
+
+        // // 입력 양식을 기반으로 섭씨를 화씨 단위로 변환하는 프로그램
+        ////다시해보기
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     const input = document.querySelector('input')
+        //     const button = document.querySelector('button')
+        //     const p = document.querySelector('p')
+
+        //     button.addEventListener('click', () => {
+        //         //입력을 숫자로 변환
+        //         const cels = Number(input.value)
+        //         //숫자가 아니라면 바로 리턴
+        //         if(isNaN(inch)) {
+        //             p.textContent = '숫자를 입력해주세요'
+        //             return
+        //         }
+        //         //변환해서 출력
+        //         const cm = inch * 2.54
+        //         p.textContent = `${cm}cm`
+        //     })
+        // })
+
+
+
+
+        // // ***이메일 형식 확인***//
+        //             document.addEventListener('DOMContentLoaded', () => {
+        //                 const input = document.querySelector('input')
+        //                 const p = document.querySelector ('p')
+        //                 const isEmail = (value) => {
+        //                     //골뱅이를 갖고있고 && 골뱅이 뒤에 점이 있다면
+        //                     return (value.indexOf('@') > 1)
+        //                     && (value.split('@')[1].indexOf('.') > 1)
+        //                 }
+
+        //                 input.addEventListener('keyup', (event) => {
+        //                     const value = event.currentTarget.value
+        //                     if (isEmail(value)) {
+        //                         p.style.color = 'green'
+        //                         p.textContent = `이메일 형식입니다: ${value}`
+        //                     } else {
+        //                         p.style.color = 'red'
+        //                         p.textContent = `이메일 형식이 아닙니다: ${value}`
+        //                     }
+        //                 })
+        //             })
+
+
+
+        // // ***기본 select 태그***//
+
+        //         document.addEventListener('DOMContentLoaded', () => {
+        //             const select = document.querySelector('select')
+        //             const p = document.querySelector('p')
+
+        //             select.addEventListener('change', (event) => {
+        //                 const options = event.currentTarget.options
+        //                 const index = event.currentTarget.options.selectedIndex
+
+        //                 p.textContent = `선택: ${options[index].textContent}`
+        //             })
+        //         })
+
+
+
+        // //***multiple select 태그***//
+        // // 배열 끝에, 요소를 추가하는 .push () :선택한 메뉴를 배열로 넣는 코드!
+//////다시 해보기
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     const select = document.querySelector('select')
+        //     const p = document.querySelector('p')
+
+        //     select.addEventListener('change', (event) => {
+        //         const options = event.currentTarget.options
+        //         const list = []
+        //         for (const option of options) {
+        //             if (option.selected) {
+        //                 list.push(option.textContent)
+        //             }
+        //         }
+        //         p.textContent = `선택: ${list.join(',')}`
+        //     })
+        // })
+
+
+        // // ***cm 단위를 여러 단위로 변환하는 프로그램***//
+
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     let 현재값
+        //     let 변환상수 = 10
+
+        //     const select = document.querySelector('select')
+        //     const input = document.querySelector('input')
+        //     const span = document.querySelector('span')
+
+        //     const calculate = () => {
+        //         span.textContent = (현재값 * 변환상수).toFixed(2)
+        //     }
+
+        //     select.addEventListener('change', (event) => {
+        //         const options = event.currentTarget.options
+        //         const index = event.currentTarget.options.selectedIndex
+        //         변환상수 = Number(options[index].value)
+        //         calculate()
+        //     })
+        //     input.addEventListener('keyup', (event) => {
+        //         현재값 = Number(event.currentTarget.value)
+        //         calculate()
+        //     })
+        // })
+
+
+
+
+
+
+
+// //***체크 박스 활용하기 소스 코드- 타이머***//
+//         document.addEventListener('DOMContentLoaded', () => {
+//             let [timer, timerId] = [0, 0]
+//             const h1 = document.querySelector('h1')
+//             const checkbox = document.querySelector('input')
+
+//             checkbox.addEventListener('change', (event) => {
+//                 if (event.currentTarget.checked) {
+//                     //체크 상태
+//                     timerId = setInterval(() => {
+//                         timer += 1
+//                         h1.textContent = `${timer}초`
+//                     }, 1000)
+//                 } else {
+//                     //체크 해제 상태
+//                     clearInterval(timerId)
+//                 }
+//             })
+//         })
+
+
+
+// // ***라디오 버튼 사용해보기***//
+
+//         document.addEventListener('DOMContentLoaded', () => {
+//             //문서 객체 추출하기
+//             const output = document.querySelector('#output')
+//             const radios = document.querySelectorAll('[name=pet]')
+
+//             //모든 라디오 버튼에
+//             radios.forEach((radio) => {
+//                 //이벤트 연결
+//                 radio.addEventListener('change', (event) => {
+//                     const current = event.currentTarget
+//                     if(current.checked) {
+//                         output.textContent = `좋아하는 애완동물은 ${current.value}이시군요!`
+//                     }
+//                 })
+//             })
+//         })
+
+
+// // ***이미지 마우스 오른쪽 버튼 클릭 막기***//
+
+//         document.addEventListener('DOMContentLoaded', () => {
+//             const imgs = document.querySelectorAll('img')
+
+//             imgs.forEach((img) => {
+//                 img.addEventListener('contextmenu', (event) =>
+//                  {event.preventDefault()
+//                 })
+//             })
+//         })
+
+
+
+// // ***체크 때만 링크 활성화하기***//
+// // 링크 활성화 체크 해제했어도 링크 넘어가면 event.preventDefault가 함수라서 끝에 () 붙여야 적용됨
+//         document.addEventListener('DOMContentLoaded', () => {
+//             let status = false
+
+//             const checkbox = document.querySelector('input')
+//             checkbox.addEventListener('change', (event) => {
+//                 status = event.currentTarget.checked
+//             })
+
+//             const link = document.querySelector('a')
+//             link.addEventListener('click', (event) => {
+//                 if (!status) {
+//                     event.preventDefault()
+//                 }
+//             })
+//         }) 
+
+
+
+// ***localStorage 객체***//
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const p = document.querySelector('p')
+            const input = document.querySelector('input')
+            const button = document.querySelector('button')
+
+            const savedValue = localStorage.getItem('input')
+            //localStorage.input 도 가능하다.
+            if(savedValue) {
+                input.value = savedValue
+                p.textContent = `이전 실행 때의 마지막 값: ${savedValue}`
+            }
+
+            input.addEventListener('keyup', (event) => {
+                const value = event.currentTarget.value
+                localStorage.setItem('input', value)
+                //localStorage.input = value 도 가능
+            })
+
+            button.addEventListener('click', (event) => {
+                localStorage.clear()
+                input.value = ""
+            })
+        })
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <!-- <h1></h1> -->
+    <!-- <textarea></textarea> -->
+
+
+    <!-- <h1>⭐️</h1> -->
+
+
+
+    <!-- <input type="text"> inch <br>
+    <button>계산</button>
+    <p></p>
+
+    <input type="text"> inch <br>
+    <button>계산</button>
+    <p></p> -->
+
+
+    <!-- <input type="text">
+    <p></p> -->
+
+
+    <!-- <select>
+    <option>떡볶이</option>
+    <option>순대</option>
+    <option>오뎅</option>
+    <option>튀김</option>
+    </select>
+
+    <p>선택: 떡볶이</p> -->
+
+
+    <!-- <select multiple>
+        <option>떡볶이</option>
+        <option>순대</option>
+        <option>오뎅</option>
+        <option>튀김</option>
+    </select>
+
+    <p></p> -->
+
+
+
+    <!-- <input type="text"> cm =
+    <span></span>
+    <select>
+        <option value="10">mm</option>
+        <option value="0.01">m</option>
+        <option value="0.393701">inch</option>
+    </select> -->
+
+
+<!-- 
+    <input type="checkbox">
+    <span>타이머 활성화</span>
+    <h1></h1> -->
+
+
+
+    <!-- <h3>#좋아하는 애완동물을 선택해주세요</h3>
+    <input type="radio" name="pet" value="강아지">
+    <span>강아지</span>
+    <input type="radio" name="pet" value="고양이">
+    <span>고양이</span>
+    <input type="radio" name="pet" value="햄스터">
+    <span>햄스터</span>
+    <input type="radio" name="pet" value="기타">
+    <span>기타</span>
+
+    <hr>
+    <h3 id = "output"></h3> -->
+
+
+    <!-- <img src="http://picsum.photos/300/300" alt=""> -->
+
+
+    <!-- <input type="checkbox">
+    <span>링크 활성화</span>
+    <br>
+    <a href="http://www.naver.com">네이버</a> -->
+
+
+
+    <p></p>
+    <button>지우기</button>
+    <input type="text">
+
+
+</body>
+
+</html>
