@@ -78,18 +78,18 @@
 // 어떤 연산의 결과로 생성된 값을 순회할때 유용하다 
 //function * 예약어로 정의된다. 
 
-function* generate() {
-  console.log("제너레이터 실행");
-  console.log("1생성");
-  yield 1;
-  console.log("2생성");
-  yield 2;
-  console.log("3생성");
-  yield 3;
-}
-let gen = generate(); //함수 호출
-let result = gen.next();
-result = gen.next();
+// function* generate() {
+//   console.log("제너레이터 실행");
+//   console.log("1생성");
+//   yield 1;
+//   console.log("2생성");
+//   yield 2;
+//   console.log("3생성");
+//   yield 3;
+// }
+// let gen = generate(); //함수 호출
+// let result = gen.next();
+// result = gen.next();
 // result = gen.next(); //3까지 생성해줌
 // console.log(gen);
 
@@ -102,16 +102,57 @@ result = gen.next();
 //   console.log(gen);
 
 
-// let iterator = gen[Symbol.iterator]();
-// console.log(iterator);
-function* sequence(from = 0, to = Infinity, interval = 1){ //제너레이터함수 실행
-let next = from;
-while(next <= to){
-  yield next;
-  next += interval;
-  }
-};
-let evenSeq = sequence (2, 10, 2);
-for(let seq of evenSeq)
-  console.log(seq)
+// // let iterator = gen[Symbol.iterator]();
+// // console.log(iterator);
+// function* sequence(from = 0, to = Infinity, interval = 1){ //제너레이터함수 실행
+// let next = from;
+// while(next <= to){
+//   yield next;
+//   next += interval;
+//   }
+// };
+// let evenSeq = sequence (1, 10, 2);
+// for(let seq of evenSeq)
+//   console.log(seq)
+
+
+// class Sequence {
+//   constructor(from = 0, to= Infinity, interval= 1){
+//     this.from = from;
+//     this.to = to;
+//     this.interval = interval;
+//   }
+//   *[Symbol.iterator](){
+//     let num = this.from;
+//     while(num <= this.to){
+//       yield num;
+//       num += this.interval;
+//     }
+//   }
+// }
+
+// let evenNumbers = new Sequence(2, 10, 2);
+// for(const num of evenNumbers){
+//   console.log(num);
+// }
+
+//*** 중첩된 for 문을 사용하는 대신 yield* 를 사용할 수 있음 ***/
+
+// function* generateIterables(...iterables){
+//   for(let iterable of iterables)
+//     for(let item of iterable)
+//   yield item;
+// }
+//이 위 코드를 아래와 같이 줄일수 있다.
+// function* generateIterables(...iterables){
+//   for(let iterable of iterables)
+//     yield * iterable
+// }
+
+// let evenNumbers = new Sequence(2, 10, 2);
+// let generator = generateIterables("abc", [1, 2, 3]);
+// let arr = [...generator] //초기화를 해주는 것
+// console.log(arr);
+
+
 
