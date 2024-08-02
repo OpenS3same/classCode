@@ -1,0 +1,34 @@
+.wrapper{
+  width: 450px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#container{
+  position: absolute;
+}
+
+#container > img {
+  width: 100%;
+  display: none;
+}
+
+#container > img.active{
+  display: block;  
+  /* 현재이미지가 됐을때 보이게 만들어줌 */
+}
+
+button{
+  position: absolute;
+  height: 100px;
+  top: 0;
+  background-color: black;
+
+}
+#prev{
+    left: 0;
+}
+
+#next{
+  right: 0;
+}

@@ -1,0 +1,15 @@
+
+
+
+.gallery img {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  cursor: grab;
+  border: 2px solid #ccc;
+}
+.gallery img.dragging{
+  opacity: 0.5;
+  border: 2px solid yellow;
+  box-shadow: 5px 5px 15px;
+}
