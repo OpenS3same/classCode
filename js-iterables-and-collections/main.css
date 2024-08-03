@@ -1,0 +1,23 @@
+/* .active{
+  color: red;
+} */
+
+ul{
+  list-style: none
+}
+li{
+  font-size: 20px;
+  line-height: 150%;
+}
+.check{
+  color: black;
+}
+.active{
+  color: #ccc;
+}
+
+.box{
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}

@@ -204,29 +204,73 @@
 //메서드 내에서 슈퍼를 참조하면 수퍼클래스의 메서드를 호출할수 있음
 //=>
 
-  class Base {
-    constructor(name) {
-      this.name = name;
-    }
-    sayHi() {
-      return `Hi ${this.name}. 잘 지냈니?`;
-    }
-  }
+//   class Base {
+//     constructor(name) {
+//       this.name = name;
+//     }
+//     sayHi() {
+//       return `Hi ${this.name}. 잘 지냈니?`;
+//     }
+//   }
 
-  class Derived extends Base {
-    sayHi() {
-      return `${super.sayHi()}`  //super 를 이용해 sayHi 호출
-    }
-  }
-const derived = new Derived('Lee');
-console.log(derived.sayHi());
+//   class Derived extends Base {
+//     sayHi() {
+//       return `${super.sayHi()}`  //super 를 이용해 sayHi 호출
+//     }
+//   }
+// const derived = new Derived('Lee');
+// console.log(derived.sayHi());
 
 
 // *** 예제 *** //
 // Book 이라는 생성자 함수를 만들고 프로토타입을 이용하여 프로퍼티를 추가하세요. (title, author, price) / 생성할 프로토타입 예) 출판일, 페이지수
-function Book(title, author, price){
-  this.title= title,
-  this.author = author, 
-  this.price = price
+// function Book(title, author, price){
+//   this.title= title,
+//   this.author = author, 
+//   this.price = price
+// }
+// Book.prototype.year = "1999"
+
+
+
+// // ** 예제 ** //
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   textIntroduce() {
+//     return `안녕하세요. 제 이름은 ${this.name}이고, 나이는 ${this.age}살 입니다.`
+//   }
+// }
+// const person1 = new Person('한지영', 20);
+// console.log(person1.textIntroduce());
+
+
+
+
+// *** 정적메소드 예제 *** //
+class Calculator{
+  static add(a,b) {
+    return a + b;
+  }
+  static subtract(a, b) {
+    return a - b;
+  }
 }
-Book.prototype.year = "1999"
+console.log(Calculator.add(1, 3));
+console.log(Calculator.subtract(1, 3));
+
+function Calculator() {}
+
+Calculator.add = function(a, b) {
+  return a + b
+}
+Calculator.subtract = function(a, b){
+  return a - b;
+}
+
+console.log(Calculator.add(2, 5));
+console.log(Calculator.subtract(2, 5));
+
+

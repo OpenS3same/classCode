@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./select.js"></script>
+</head>
+<body>
+  <div id="container">
+    <form name="testForm">
+      <fieldset>
+      <ul>
+        <li>
+          <label for="userName">이름</label>
+          <input type="text" id="userName" name="userName">
+        </li>
+        <li>
+          <label for="class">수업</label>
+          <select name="major" id="major">
+            <option>학과 선택</option>
+            <option value="">컴퓨터공학과</option>
+            <option value="">전기공학과</option>
+            <option value="">산업디자인학과</option>
+            <option value="">화학공학과</option>
+            <option value="">소프트융합과</option>
+          </select>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <label><input type="radio" name="subject" value="back">백엔드</label>
+      <label><input type="radio" name="subject" value="front">프론트엔드</label>
+      <label><input type="radio" name="subject" value="full">풀스택</label>
+    </fieldset>
+    <fieldset>
+      <label for="">아침</label>
+      <label for="">점심</label>
+      <label for="">저녁</label>
+    </fieldset>
+    </form>
+    <!-- input[name="subject"]:chedcked -->
+    <input type="text" name="subject" checked>
+
+
+  </div>
+
+
+
+
+  <!-- <fieldset>
+    <ul>
+        <li>
+            <label for="userName">이름</label>
+            <input type="text" id="userName" name:="userName">
+        </li>
+        <li>
+            <label for="class">수업</label>
+            <select name="major" id="major">
+                <option>학과 선택</option>
+                <option value="computer">컴퓨터 공학과</option>
+                <option value="electronic">전기 공학과</option>
+                <option value="design">산업 디자인과</option>
+                <option value="chemical">화학 공학과</option>
+                <option value="soft">소프트 융합과</option>
+            </select>
+        </li>
+    </ul>
+</fieldset>
+<fieldset>
+  <label><input type="radio" name="subject" value="back">백엔드</label>
+  <label><input type="radio" name="subject" value="front">프론트엔드</label>
+  <label><input type="radio" name="subject" value="full">풀스택</label>
+</fieldset>
+<fieldset>
+  <label><input type="checkbox" name ="morning">아침</label>
+  <label><input type="checkbox" name ="afternoon">점심</label>
+  <label><input type="checkbox" name ="evening">저녁</label>
+</fieldset> -->
+</body>
+</html>
