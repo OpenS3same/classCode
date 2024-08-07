@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./server.js"></script>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+
+  <h1>안녕하세요!</h1>
+  <button id="greeting">인사합니다</button>
+  <ul id="users"></ul>
+  <!-- <script>
+    let greeting = document.querySelector('#greeting')
+    greeting.addEventListener("click", sayHello);
+    function sayHello() {
+      fetch("http://localhost:3000/greet")
+      .then(response => response.json())
+      .then(json => document.querySelector("h1").innerHTML = json.message) //then은 계속 연결할수있다
+      .catch(e => console.error(e));
+    }
+  </script> -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const ul = document.querySelector('#users');
+      const url = "http://localhost:3000/users";
+      fetch(url)
+      .then(response => {
+        if(response.ok){
+          return response.json()
+        }else{
+          throw Error(response.statusText)
+        }
+      })
+      .then(users => {
+        if(Array.isArray(users)){
+          users.forEach(user => {
+            let li = document.createElement("li");
+            li.textContent = `${user.name} : ${user.email}`;
+            ul.appendChild(li);
+          })
+
+        }else{
+            throw new Error("데이터가 배열이 아니야")
+        }
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    })
+  </script>
+  
+</body>
+</html>

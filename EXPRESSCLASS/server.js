@@ -5,6 +5,8 @@
 //   console.log("서버 실행!")
 // })
 
+
+
 // app.get('/', (req, res) => {
 //   res.sendFile(__dirname + '/index.html')
 // }) //html 파일을 보내는거라 send가 아닌 sendFile
@@ -32,9 +34,11 @@ const users = [
 ]
 
 
+app.use(express.static(__dirname + '/public'))
+
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/index.html'))
-}) //html 파일을 보내는거라 send가 아닌 sendFile
+  res.sendFile(path.join(__dirname + 'public', '/index.html'))
+}) //html 파일을 보내는거라 send가 아닌 sendFile, join 해서 붙여줌
 
 // app.get('/post', (req, res) => {
 //   res.send('포스트 페이지 입니다!')
