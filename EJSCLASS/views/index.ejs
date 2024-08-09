@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../public/main.css">
+</head>
+<body>
+  <h1>안녕하세요!</h1>
+  <p><%= "message"  %></p>
+  <!-- ejs를 치면 기호가 나온다(확장프로그램) -->
+   <p><%= "Hello" + "World" %></p>
+   <p><%= 10 + 2 %></p>
+   <p><%= true? "참" : "거짓" %></p>
+   <p><%= false? "참" : "거짓" %></p>
+   <p><%= "<h3>escaped</h3>" %></p>
+   <p><%- "<h3>escaped</h3>" %></p>
+   <div><% let str = "Hello" %>
+        <%= str %>
+  </div>
+
+  <!-- 조건문 -->
+  <div><% if (true) { %>
+      <h2>출력!!!</h2>
+      <% } %>
+      <% if (false) { %>
+        <h2>출력되지 않습니다.</h2>
+        <% } %>
+  </div>
+  <div>
+    <% if(true) { %>
+      <div>참</div>
+      <% }else{ %>
+        <div>거짓</div>
+      <% } %>
+  </div>
+
+  <!-- for문 -->
+  <% for(let i=1; i<=3; i++) { %>
+    <div><a href="/order/ <%= i %>">test <% i %>로</a></div>
+    <% } %>
+
+  <!-- forEach -->
+   <div><% let arr = ["apple", "banana", "cherry"] %>
+    <% arr.forEach((fruit) => {%>
+      <h3><%=fruit %>입니다. </h3>
+      <% }) %>
+  </div>
+
+  <!-- map -->
+  <div>
+    <% let arr2 = ["map1", "map2", "map3"] %>
+    <% arr.map((val) => { %>
+      <h3><% val %>입니다.</h3>
+      <% }) %>
+  </div>
+
+  <ul>
+    <% for(let person of people){ %>
+        <li><%= person.name %></li>
+      <% } %>
+    </ul>
+
+
+    <div class="container">
+      <h1>List</h1>
+      <form action="/addTask" method="POST"> 
+        <input type="text" name ="newTask" placeholder="할 일 목록 추가해주세요">
+        <button type="submit">추가하기</button>
+      </form>
+      <ul>
+        <% tasks.forEach(task => { %>
+        <li>
+          <%= task  %>
+          <!-- 액션으로 보내주기위해 form 으로 싸준다 -->
+          <form action="/deleteTask" method="POST">
+            <input type="hidden" name="task" value="<% = task %>">
+            <button type="submit">지우기</button>
+          </form>
+        </li>
+        <% }) %>
+      </ul>
+
+
+      <!-- 예제 -->
+      <ul>
+        <% users2.forEach(user => { %>
+          <li class="<%= user.role %>">
+            name: <%= user.name %> / age: <%= user.age %>
+            <%= user.age >= 18 ? 'pass' : 'reject' %>
+          </li>
+          <% }) %>
+      </ul>
+    </div>
+  
+</body>
+</html>
