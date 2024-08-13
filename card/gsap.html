@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script defer src="animate.js"></script>
+  <title>Document</title>
+</head>
+<style>
+  .box{
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    top: 100px;
+  }
+
+  .character{
+    position: absolute;
+    top: 200px;
+  }
+
+  .textbox{
+    background-color: #ccc;
+    font-size: 80px;
+    margin: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+<body>
+
+  <div class="box"></div>
+  <button class="animationBtn">시작!</button>
+  <h1 class="title">Hello World</h1>
+  <div class="character"><img src="./cha.png" alt="character"></div>
+  <div class="textbox">
+    <h1>Hi</h1>
+  </div>
+  <div class="textbox">
+    <h1>Hi</h1>
+  </div>
+  <div class="textbox target">
+    <h1>Hi</h1>
+  </div>
+  <div class="textbox">
+    <h1>Hi</h1>
+  </div>
+  <div class="textbox">
+    <h1>Hi</h1>
+  </div>
+
+  
+</body>
+</html>
